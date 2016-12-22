@@ -1,8 +1,4 @@
-.calendar-grid {
-	-fx-hgap: 4 ;
-	-fx-vgap: 4 ;
-	-fx-padding: 4 ;
-}
+
 
 .calendar-header {
 	-fx-alignment: center ;
@@ -11,7 +7,7 @@
 }
 
 .calendar-cell {
-	-fx-padding: 4 ;
+	-fx-padding:  4 22 4 22 ;
 	-fx-alignment: center ;
 }
 

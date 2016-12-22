@@ -1,8 +1,6 @@
 package ch.csbe.calendar;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -13,18 +11,15 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.WeekFields;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.css.PseudoClass;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
@@ -36,18 +31,81 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.FileChooser;
 
 public class CalendarController implements Initializable
 {
 	@FXML
-	private Pane pane;
+	private Pane panejan;
 	@FXML
-	public Pane template1_pane;
+	private Pane panefeb;
 	@FXML
-	protected ImageView pic1;
+	private Pane panemär;
 	@FXML
-	protected ImageView pic2;
+	private Pane paneapr;
+	@FXML
+	private Pane panemai;
+	@FXML
+	private Pane panejun;
+	@FXML
+	private Pane panejul;
+	@FXML
+	private Pane paneaug;
+	@FXML
+	private Pane panesep;
+	@FXML
+	private Pane paneokt;
+	@FXML
+	private Pane panenov;
+	@FXML
+	private Pane panedez;
+	@FXML
+	protected ImageView janpicture1;
+	@FXML
+	protected ImageView janpicture2;
+	@FXML
+	protected ImageView febpicture1;
+	@FXML
+	protected ImageView febpicture2;
+	@FXML
+	protected ImageView marpicture1;
+	@FXML
+	protected ImageView marpicture2;
+	@FXML
+	protected ImageView aprpicture1;
+	@FXML
+	protected ImageView aprpicture2;
+	@FXML
+	protected ImageView maipicture1;
+	@FXML
+	protected ImageView maipicture2;
+	@FXML
+	protected ImageView junpicture1;
+	@FXML
+	protected ImageView junpicture2;
+	@FXML
+	protected ImageView julpicture1;
+	@FXML
+	protected ImageView julpicture2;
+	@FXML
+	protected ImageView augpicture1;
+	@FXML
+	protected ImageView augpicture2;
+	@FXML
+	protected ImageView seppicture1;
+	@FXML
+	protected ImageView seppicture2;
+	@FXML
+	protected ImageView oktpicture1;
+	@FXML
+	protected ImageView oktpicture2;
+	@FXML
+	protected ImageView novpicture1;
+	@FXML
+	protected ImageView novpicture2;
+	@FXML
+	protected ImageView dezpicture1;
+	@FXML
+	protected ImageView dezpicture2;
 	
 	
 	
@@ -87,7 +145,7 @@ private final ObjectProperty<YearMonth> month = new SimpleObjectProperty<>();
     }
     
     public CalendarController() {
-        this(YearMonth.now()) ;
+        this(YearMonth.of(2016, 1)) ;
     }
     
     public void nextMonth() {
@@ -139,6 +197,7 @@ private final ObjectProperty<YearMonth> month = new SimpleObjectProperty<>();
             int weeksSinceFirstDisplayed = daysSinceFirstDisplayed / 7 ;
             
             calendar.add(label, dayOfWeek - 1, weeksSinceFirstDisplayed + 1);
+            
         }
     }
     
@@ -184,31 +243,279 @@ private final ObjectProperty<YearMonth> month = new SimpleObjectProperty<>();
 	}
 	
     @FXML
-	public void template1(ActionEvent e) {
-		pic1.setLayoutX(15);
-		pic1.setLayoutY(15);
-		pic1.setFitHeight(333.25);
-		pic1.setFitWidth(444.3);
-		pic2.setVisible(false);
+	public void jantemplate1(ActionEvent e) {
+		janpicture1.setLayoutX(14);
+		janpicture1.setLayoutY(14);
+		janpicture1.setFitHeight(472);
+		janpicture1.setFitWidth(577);
+		janpicture2.setVisible(false);
 	}
 	
 	@FXML
-	public void template2(ActionEvent e) {
-		pic1.setLayoutX(15);
-		pic1.setLayoutY(23);
-		pic1.setFitWidth(200);
-		pic1.setFitHeight(150);
-		pic2.setVisible(true);
-		pic2.setLayoutX(232);
-		pic2.setLayoutY(23);
-		pic2.setFitWidth(200);
-		pic2.setFitHeight(150);
+	public void jantemplate2(ActionEvent e) {
+		janpicture1.setLayoutX(14);
+		janpicture1.setLayoutY(14);
+		janpicture1.setFitWidth(290);
+		janpicture1.setFitHeight(460);
+		janpicture2.setVisible(true);
+		janpicture2.setLayoutX(332);
+		janpicture2.setLayoutY(14);
+		janpicture2.setFitWidth(290);
+		janpicture2.setFitHeight(460);
 	}
-
+	
+	@FXML
+	public void febtemplate1(ActionEvent e) {
+		febpicture1.setLayoutX(14);
+		febpicture1.setLayoutY(14);
+		febpicture1.setFitHeight(472);
+		febpicture1.setFitWidth(577);
+		febpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void febtemplate2(ActionEvent e) {
+		febpicture1.setLayoutX(14);
+		febpicture1.setLayoutY(14);
+		febpicture1.setFitWidth(290);
+		febpicture1.setFitHeight(460);
+		febpicture2.setVisible(true);
+		febpicture2.setLayoutX(332);
+		febpicture2.setLayoutY(14);
+		febpicture2.setFitWidth(290);
+		febpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void martemplate1(ActionEvent e) {
+		marpicture1.setLayoutX(14);
+		marpicture1.setLayoutY(14);
+		marpicture1.setFitHeight(472);
+		marpicture1.setFitWidth(577);
+		marpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void martemplate2(ActionEvent e) {
+		marpicture1.setLayoutX(14);
+		marpicture1.setLayoutY(14);
+		marpicture1.setFitWidth(290);
+		marpicture1.setFitHeight(460);
+		marpicture2.setVisible(true);
+		marpicture2.setLayoutX(332);
+		marpicture2.setLayoutY(14);
+		marpicture2.setFitWidth(290);
+		marpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void aprtemplate1(ActionEvent e) {
+		aprpicture1.setLayoutX(14);
+		aprpicture1.setLayoutY(14);
+		aprpicture1.setFitHeight(472);
+		aprpicture1.setFitWidth(577);
+		aprpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void aprtemplate2(ActionEvent e) {
+		aprpicture1.setLayoutX(14);
+		aprpicture1.setLayoutY(14);
+		aprpicture1.setFitWidth(290);
+		aprpicture1.setFitHeight(460);
+		aprpicture2.setVisible(true);
+		aprpicture2.setLayoutX(332);
+		aprpicture2.setLayoutY(14);
+		aprpicture2.setFitWidth(290);
+		aprpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void maitemplate1(ActionEvent e) {
+		maipicture1.setLayoutX(14);
+		maipicture1.setLayoutY(14);
+		maipicture1.setFitHeight(472);
+		maipicture1.setFitWidth(577);
+		maipicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void maitemplate2(ActionEvent e) {
+		maipicture1.setLayoutX(14);
+		maipicture1.setLayoutY(14);
+		maipicture1.setFitWidth(290);
+		maipicture1.setFitHeight(460);
+		maipicture2.setVisible(true);
+		maipicture2.setLayoutX(332);
+		maipicture2.setLayoutY(14);
+		maipicture2.setFitWidth(290);
+		maipicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void juntemplate1(ActionEvent e) {
+		junpicture1.setLayoutX(14);
+		junpicture1.setLayoutY(14);
+		junpicture1.setFitHeight(472);
+		junpicture1.setFitWidth(577);
+		junpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void juntemplate2(ActionEvent e) {
+		junpicture1.setLayoutX(14);
+		junpicture1.setLayoutY(14);
+		junpicture1.setFitWidth(290);
+		junpicture1.setFitHeight(460);
+		junpicture2.setVisible(true);
+		junpicture2.setLayoutX(332);
+		junpicture2.setLayoutY(14);
+		junpicture2.setFitWidth(290);
+		junpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void jultemplate1(ActionEvent e) {
+		julpicture1.setLayoutX(14);
+		julpicture1.setLayoutY(14);
+		julpicture1.setFitHeight(472);
+		julpicture1.setFitWidth(577);
+		julpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void jultemplate2(ActionEvent e) {
+		julpicture1.setLayoutX(14);
+		julpicture1.setLayoutY(14);
+		julpicture1.setFitWidth(290);
+		julpicture1.setFitHeight(460);
+		julpicture2.setVisible(true);
+		julpicture2.setLayoutX(332);
+		julpicture2.setLayoutY(14);
+		julpicture2.setFitWidth(290);
+		julpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void augtemplate1(ActionEvent e) {
+		augpicture1.setLayoutX(14);
+		augpicture1.setLayoutY(14);
+		augpicture1.setFitHeight(472);
+		augpicture1.setFitWidth(577);
+		augpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void augtemplate2(ActionEvent e) {
+		augpicture1.setLayoutX(14);
+		augpicture1.setLayoutY(14);
+		augpicture1.setFitWidth(290);
+		augpicture1.setFitHeight(460);
+		augpicture2.setVisible(true);
+		augpicture2.setLayoutX(332);
+		augpicture2.setLayoutY(14);
+		augpicture2.setFitWidth(290);
+		augpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void septemplate1(ActionEvent e) {
+		seppicture1.setLayoutX(14);
+		seppicture1.setLayoutY(14);
+		seppicture1.setFitHeight(472);
+		seppicture1.setFitWidth(577);
+		seppicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void septemplate2(ActionEvent e) {
+		seppicture1.setLayoutX(14);
+		seppicture1.setLayoutY(14);
+		seppicture1.setFitWidth(290);
+		seppicture1.setFitHeight(460);
+		seppicture2.setVisible(true);
+		seppicture2.setLayoutX(332);
+		seppicture2.setLayoutY(14);
+		seppicture2.setFitWidth(290);
+		seppicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void okttemplate1(ActionEvent e) {
+		oktpicture1.setLayoutX(14);
+		oktpicture1.setLayoutY(14);
+		oktpicture1.setFitHeight(472);
+		oktpicture1.setFitWidth(577);
+		oktpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void okttemplate2(ActionEvent e) {
+		oktpicture1.setLayoutX(14);
+		oktpicture1.setLayoutY(14);
+		oktpicture1.setFitWidth(290);
+		oktpicture1.setFitHeight(460);
+		oktpicture2.setVisible(true);
+		oktpicture2.setLayoutX(332);
+		oktpicture2.setLayoutY(14);
+		oktpicture2.setFitWidth(290);
+		oktpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void novtemplate1(ActionEvent e) {
+		novpicture1.setLayoutX(14);
+		novpicture1.setLayoutY(14);
+		novpicture1.setFitHeight(472);
+		novpicture1.setFitWidth(577);
+		novpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void novtemplate2(ActionEvent e) {
+		novpicture1.setLayoutX(14);
+		novpicture1.setLayoutY(14);
+		novpicture1.setFitWidth(290);
+		novpicture1.setFitHeight(460);
+		novpicture2.setVisible(true);
+		novpicture2.setLayoutX(332);
+		novpicture2.setLayoutY(14);
+		novpicture2.setFitWidth(290);
+		novpicture2.setFitHeight(460);
+	}
+	
+	@FXML
+	public void deztemplate1(ActionEvent e) {
+		dezpicture1.setLayoutX(14);
+		dezpicture1.setLayoutY(14);
+		dezpicture1.setFitHeight(472);
+		dezpicture1.setFitWidth(577);
+		dezpicture2.setVisible(false);
+	}
+	
+	@FXML
+	public void deztemplate2(ActionEvent e) {
+		dezpicture1.setLayoutX(14);
+		dezpicture1.setLayoutY(14);
+		dezpicture1.setFitWidth(290);
+		dezpicture1.setFitHeight(460);
+		dezpicture2.setVisible(true);
+		dezpicture2.setLayoutX(332);
+		dezpicture2.setLayoutY(14);
+		dezpicture2.setFitWidth(290);
+		dezpicture2.setFitHeight(460);
+	}
+	
+	
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		pane.getChildren().add(view);
-		
+		panejan.getChildren().add(view);	
 	}
+	
+	public void initialize1(URL location, ResourceBundle resources) {
+		panefeb.getChildren().add(view);	
+	}
+	
 }

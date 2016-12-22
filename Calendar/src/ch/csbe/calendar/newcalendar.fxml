@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="821.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.csbe.calendar.CalendarController">
+  <children>
+    <Button id="backtomenu" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" text="Menu" />
+    <Label layoutX="14.0" layoutY="14.0" text="Kalender Erstellung">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Label>
+    <Separator layoutX="153.0" layoutY="0.0" orientation="VERTICAL" prefHeight="797.0" prefWidth="12.0" />
+    <TabPane layoutX="159.0" layoutY="14.0" prefHeight="808.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Januar">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+              <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                      <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                      <Pane id="pane" fx:id="panejan" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                      <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                      <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                    <ImageView id="template1_picture" fx:id="janpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@template1.png" />
+                      </image>
+                    </ImageView>
+                    <ImageView id="pic2" fx:id="janpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                      <image>
+                        <Image url="@template1.png" />
+                      </image>
+                    </ImageView>
+                           </children>
+                        </Pane>
+                      <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#jantemplate1" text="1 Bild" />
+                      <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#jantemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Februar">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panefeb" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="febpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="febpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#febtemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#febtemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="März">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panemar" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="marpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="marpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#martemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#martemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="April">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="paneapr" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="aprpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="aprpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#aprtemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#aprtemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="Mai">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panemai" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="maipicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="maipicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#maitemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#maitemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="Juni">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panejun" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="junpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="junpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#juntemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#juntemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="Juli">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panejul" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="julpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="julpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#jultemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#jultemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="August">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="paneaug" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="augpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="augpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#augtemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#augtemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="September">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panesep" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="seppicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="seppicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#septemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#septemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="Oktober">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="paneokt" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="oktpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="oktpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#okttemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#okttemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="November">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panenov" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="novpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="novpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#novtemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#novtemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+        <Tab text="Dezember">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="636.0">
+                     <children>
+                        <Pane layoutY="57.0" prefHeight="722.0" prefWidth="636.0">
+                           <children>
+                              <Separator layoutX="-3.0" layoutY="497.0" prefWidth="642.0" />
+                              <Pane id="pane" fx:id="panedez" layoutX="113.0" layoutY="500.0" prefHeight="218.0" prefWidth="417.0" />
+                              <Button layoutX="87.0" layoutY="514.0" mnemonicParsing="false" onAction="#previousMonth" prefHeight="190.0" prefWidth="26.0" text="&lt;" />
+                              <Button layoutX="530.0" layoutY="514.0" mnemonicParsing="false" onAction="#nextMonth" prefHeight="190.0" prefWidth="26.0" text="&gt;" />
+                              <ImageView id="template1_picture" fx:id="dezpicture1" fitHeight="472.0" fitWidth="577.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView id="pic2" fx:id="dezpicture2" fitHeight="460.0" fitWidth="290.0" layoutX="332.0" layoutY="14.0" onMouseClicked="#upload" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@template1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#deztemplate1" text="1 Bild" />
+                        <Button layoutX="83.0" layoutY="19.0" mnemonicParsing="false" onAction="#deztemplate2" text="2 Bilder" />
+                        <Separator layoutX="-3.0" layoutY="56.0" prefWidth="642.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</Pane>
