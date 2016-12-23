@@ -1,6 +1,7 @@
 package ch.csbe.calendar;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -18,12 +19,13 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -31,6 +33,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class CalendarController implements Initializable
 {
@@ -39,7 +42,7 @@ public class CalendarController implements Initializable
 	@FXML
 	private Pane panefeb;
 	@FXML
-	private Pane panemär;
+	private Pane panemar;
 	@FXML
 	private Pane paneapr;
 	@FXML
@@ -107,6 +110,25 @@ public class CalendarController implements Initializable
 	@FXML
 	protected ImageView dezpicture2;
 	
+	public void menu(ActionEvent e){
+
+		Node node=(Node) e.getSource();
+		  Stage stage=(Stage) node.getScene().getWindow();
+		  Parent root = null;
+		try {
+			root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		  Scene scene = new Scene(root);
+		  stage.setScene(scene);
+		  stage.show();
+    }
+
+	
+	public void exit (ActionEvent e){
+		System.exit(0);
+	}
 	
 	
 private final ObjectProperty<YearMonth> month = new SimpleObjectProperty<>();
@@ -145,7 +167,7 @@ private final ObjectProperty<YearMonth> month = new SimpleObjectProperty<>();
     }
     
     public CalendarController() {
-        this(YearMonth.of(2016, 1)) ;
+        this(YearMonth.of(2017, 1)) ;
     }
     
     public void nextMonth() {
@@ -166,7 +188,6 @@ private final ObjectProperty<YearMonth> month = new SimpleObjectProperty<>();
         
         int dayOfWeekOfFirst = first.get(weekFields.dayOfWeek()) ;
         
-        // column headers:
         for (int dayOfWeek = 1 ; dayOfWeek <= 7 ; dayOfWeek++) {
             LocalDate date = first.minusDays(dayOfWeekOfFirst - dayOfWeek);
             DayOfWeek day = date.getDayOfWeek() ;
@@ -504,18 +525,24 @@ private final ObjectProperty<YearMonth> month = new SimpleObjectProperty<>();
 		dezpicture2.setLayoutY(14);
 		dezpicture2.setFitWidth(290);
 		dezpicture2.setFitHeight(460);
-	}
-	
-	
-	
+	}	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		panejan.getChildren().add(view);	
+		panejan.getChildren().add(view);
+		/*panefeb.getChildren().add(view); nextMonth();
+		panemar.getChildren().add(view); nextMonth();	
+		panefeb.getChildren().add(view); nextMonth();
+		panemar.getChildren().add(view); nextMonth();
+		paneapr.getChildren().add(view); nextMonth();
+		panemai.getChildren().add(view); nextMonth();
+		panejun.getChildren().add(view); nextMonth();
+		panejul.getChildren().add(view); nextMonth();
+		paneaug.getChildren().add(view); nextMonth();
+		panesep.getChildren().add(view); nextMonth();
+		paneokt.getChildren().add(view); nextMonth();
+		panenov.getChildren().add(view); nextMonth();
+		panedez.getChildren().add(view); nextMonth();*/
 	}
-	
-	public void initialize1(URL location, ResourceBundle resources) {
-		panefeb.getChildren().add(view);	
-	}
-	
+
 }

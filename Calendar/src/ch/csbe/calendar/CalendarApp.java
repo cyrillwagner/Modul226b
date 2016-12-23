@@ -13,7 +13,7 @@ public class CalendarApp extends Application{
 	@Override
     public void start(Stage primaryStage) throws IOException {
 
-        Parent parent = FXMLLoader.load(getClass().getResource("newcalendar.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("menu.fxml"));
         Scene scene = new Scene(parent);
         primaryStage.setTitle("Calendar");
         primaryStage.setScene(scene);
